@@ -1,0 +1,12 @@
+.home{
+    background-color: var(--background-primary);
+    width: 82.5%;
+}
+.hero-img{
+ margin-top: 1rem;
+ width: 92%;
+ height: 15rem;
+ border-radius: 1.25rem;
+ object-fit: cover;
+ object-position:50% 20% ;
+}
