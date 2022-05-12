@@ -1,0 +1,32 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--background-primary);
+    width: 82.5%;
+}
+.container-header{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+.container-header-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header-text{
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+    color: var(--font-primary);
+}
+.header-icon{
+    width: 2rem;
+    height: 100%;
+    padding-top: 0.5rem;
+}

@@ -30,13 +30,13 @@ function Nav() {
             </NavLink>
           </section>
           <section className="nav-link">
-            <NavLink className="nav-btn" to="/">
+            <NavLink className="nav-btn" to="/explore">
             <img className="nav-img" src={Explore}/>
               <span>Explore</span>
             </NavLink>
           </section>
           <section className="nav-link">
-            <NavLink className="nav-btn"to="/">
+            <NavLink className="nav-btn"to="/likedVideos">
             <img className="nav-img" src={Like}/>
               <span>Liked videos</span>
             </NavLink>
@@ -48,7 +48,7 @@ function Nav() {
             </NavLink>
           </section>
           <section className="nav-link">
-            <NavLink className="nav-btn"to="/">
+            <NavLink className="nav-btn"to="/history">
             <img className="nav-img" src={history}/>
               <span>History</span>
             </NavLink>

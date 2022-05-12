@@ -3,19 +3,108 @@
  * You can add videos of your wish with different attributes
  * */
 
-export const videos = [
+ export const videos = [
   {
-    _id: "Wo5dMEP_BbI",
-    title: "Awesome Video about Coding",
+    _id: "vBrqzYNbew",
+    title: "What is Acute Mountain Sickness (AMS)?",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
-    creator: "Soham Shah",
+      "Acute Mountain Sickness (AMS) is something every high altitude trekker needs to be aware of.",
+    creator: "Indiahikes",
+    category:"Altitude Sickness",
+    tags:["trending"],
+    created:"2016-03-11T09:41:13Z",
+    image:"Images/videoImages/sickness.webp",
+    creatorImage:"Images/videoImages/creator.webp",
   },
   {
-    _id: "F_Riqjdh2oM",
-    title: "Neural Networks from Scratch - P.1 Intro and Neuron Code",
-    creator: "Sentdex",
+    _id: "TAKO6Gg_aGY",
+    title: "5 Signs You May NOT Recognise As Acute Mountain Sickness (AMS)",
     description:
-      "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.",
+      "cute Mountain Sickness is very common when you're trekking in the Himalayas.How common is it? Well, in a team of 20, we see at least 3-4 people showing symptoms of AMS.",
+  
+    creator: "Indiahikes",
+    category:"Altitude Sickness",
+    tags:[""],
+    created:"2019-06-04T06:59:46Z",
+    image:"Images/videoImages/sickness1.webp",
+    creatorImage:"Images/videoImages/creator.webp",
   },
-];
+  {
+    _id: "2lt7y9glTew",
+    title: "3 Life Saving Drugs (LSD) To Tackle Altitude Sickness",
+    description:
+      "n this, video we are talking about 3 Life Saving Drugs that you must always have with you at high altitude to tackle altitude sickness.",
+    creator: "Indiahikes",
+    category:"Altitude Sickness",
+    tags:[""],
+    created:"2019-08-14T08:34:33Z",
+    image:"Images/videoImages/sickness2.webp",
+    creatorImage:"Images/videoImages/creator.webp",
+  },
+
+  // backpacking videos
+
+  {
+    _id: "w-VNNU4VroA",
+    title: "How to pack your backpack?",
+        description: "There's just one rule you follow while packing your bag. The ABCD Rule. A - Accessibility, B - Balance, C - Compactness and D - Done the above. It's as simple as that.", 
+    creator: "Indiahikes",
+    category:"Backpacking",
+    tags:["trending"],
+    created:"2016-02-26T04:52:35Z",
+    image:"Images/videoImages/backpack.webp",
+    creatorImage:"Images/videoImages/creator.webp",
+  },
+  {
+    _id: "R8f2K6PFQHw",
+    title: "How To Wear A Backpack Correctly | बैकपैक पहनने का सही तरीका | Indiahikes | Chalein Trekking",
+    description: "How to wear a Backpack | Chalein Trekking Dushyant Sharma Ke Saath | Indiahikes .In this video Dushyant shows the correct way of wearing a backpack.",
+    creator: "Indiahikes",
+    category:"Backpacking",
+    tags:[""],
+    created:"2016-02-26T04:52:35Z",
+    image:"Images/videoImages/backpack1.webp",
+    creatorImage:"Images/videoImages/creator.webp",
+  },
+
+  // trekk videos
+  {
+    _id: "wu6H_gMKjmI",
+    title: "Why should Tarsar Marsar be on your bucketlist?",
+    description: "The Tarsar Marsar trek is a superb example of what trekking in Kashmir is all about: terrific alpine lakes, wide open plains, endless grasslands, grand mountain views. Frankly, we have other treks in the rest of the country. But very few of our treks can match up to the experience of doing the Tarsar Marsar trek.",
+    creator: "Indiahikes",
+    category:"All Trekks",
+    tags:["trending"],
+    created:"2016-06-03T09:15:48Z",
+    image:"Images/videoImages/trekk.webp",
+    creatorImage:"Images/videoImages/creator.webp",
+  },
+  {
+    _id: "10sSiay1nhQ",
+    title: "What makes Hampta Pass a dramatic crossover trek?",
+    description: "Hampta Pass is an unusual, special pass. It climbs out of lush green valleys of Kullu through a narrow gorge-like valley to an overhang high in the mountains. The overhang you stand on is a window to a different world altogether: the deserts of Spiti.",
+    creator: "Indiahikes",
+    category:"All Trekks",
+    tags:["trending"],
+    created:"2016-06-15T11:25:15Z",
+    image:"Images/videoImages/trekk1.webp",
+    creatorImage:"Images/videoImages/creator.webp",
+  },
+  {
+    _id: "A9IrVeMo5qA",
+    title: "Why is Kedarkantha the perfect winter trek?",
+    description: "Kedarkantha is one of the first few treks Indiahikes began organizing. It has a stunning summit climb, and is a perfect trek to do in all seasons. The Kedarkantha peak stands at an altitude of  12, 500 ft with a 360 degree view around other Himlayan peaks.",
+    creator: "Indiahikes",
+    category:"All Trekks",
+    tags:["trending"],
+    created:"2016-07-09T05:28:02Z",
+    image:"Images/videoImages/trekk2.webp",
+    creatorImage:"Images/videoImages/creator.webp",
+  },
+
+
+
+]
+
+// https://www.googleapis.com/youtube/v3/videos?id=_vBrqzYNbew&key=AIzaSyAjHCrrassg6_9f0-GpCqaVMhUywcvFMWk
+//      &part=snippet,contentDetails,statistics,status

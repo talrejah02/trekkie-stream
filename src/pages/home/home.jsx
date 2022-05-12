@@ -4,7 +4,7 @@ import "./home.css"
 
 function Home() {
   return (
-    <section className='home'>
+    <section className='main-container'>
     <img className='hero-img' src='Images/categoryImages/treks.webp'/>
     <Category/>
     </section>
