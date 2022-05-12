@@ -1,0 +1,26 @@
+
+.header-search{
+    display: flex;
+    width: 50%;
+    column-gap: 1rem;
+    align-items: center;
+    background-color: var(--background-secondary);
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    border-radius: 5px;
+    box-shadow:0px 0px 6px 0px #5c5c5c;;
+
+}
+.header-search-input{
+    font-size: 1.1rem;
+    width: 100%;
+    background-color: inherit;
+    color: var(--font-primary);
+    border: none;
+}
+.header-search-input:focus{
+    outline: none;
+    color: var(--background-secondary);
+}
+.header-search:focus-within{
+    background-color: var(--font-primary);
+}

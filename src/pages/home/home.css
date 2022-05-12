@@ -1,12 +1,4 @@
-.home{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: var(--background-primary);
-    width: 82.5%;
-}
+
 .hero-img{
  width: 92%;
  height: 15rem;
