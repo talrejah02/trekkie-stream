@@ -11,18 +11,3 @@
     letter-spacing: 0.1rem;
     font-size: 1rem;
 }
-.btn-link-primary{
-    text-decoration: none;
-    color: var(--font-dark);
-    font-weight: 700;
-    background-color: var(--primary);
-    padding: 0.5rem 0.8rem 0.5rem 0.8rem;
-    border-radius: 0.5rem;
-    transition: 0.3s;
-}
-.btn-link-primary:hover{
-    cursor: pointer;
-    box-shadow: 0px 0px 6px 0px #f1d180;
-    transition: 0.5s;
-  
-}
