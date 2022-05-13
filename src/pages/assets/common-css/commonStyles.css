@@ -4,7 +4,7 @@
     align-items: center;
     padding: 2rem;
     background-color: var(--background-primary);
-    width: 82.5%;
+    width: 100%;
 }
 .container-header{
     display: flex;

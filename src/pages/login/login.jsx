@@ -1,9 +1,10 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./login.css";
-import loginsvg from "../assets/svg/loginsvg.svg"
+import loginsvg from "../assets/svg/loginsvg.svg";
 
 function Login() {
+ 
   return (
     <section className="login-wrapper">
       <section className="login-card">
@@ -55,9 +56,7 @@ function Login() {
                   ></path>
                 </svg>
               </span>
-
               <input type="password" placeholder="Enter password" />
-
               <span className="input-svg">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,6 +77,7 @@ function Login() {
               </span>
             </section>
           </section>
+
           <section className="input-check">
             <section className="input-check-left">
               <input type="checkbox" name="check" />
