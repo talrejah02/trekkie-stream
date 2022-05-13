@@ -8,6 +8,7 @@ import playlist from "../../assets/svg/playlist.svg"
 import Logo from "../../assets/svg/Logo.svg"
 import account from "../../assets/svg/account.svg"
 import Setting from "../../assets/svg/Setting.svg"
+import watchlater from "../../assets/svg/watchlater.svg"
 import "./nav.css";
 
 function Nav() {
@@ -42,9 +43,15 @@ function Nav() {
             </NavLink>
           </section>
           <section className="nav-link">
-            <NavLink className="nav-btn"to="/">
+            <NavLink className="nav-btn" to="/playlist">
             <img className="nav-img" src={playlist}/>
               <span>Playlist</span>
+            </NavLink>
+          </section>
+          <section className="nav-link">
+            <NavLink className="nav-btn" to="/watchlater">
+            <img className="nav-img" src={watchlater}/>
+              <span>Watch Later</span>
             </NavLink>
           </section>
           <section className="nav-link">
@@ -56,15 +63,15 @@ function Nav() {
         </section>
         <footer className="nav-items">
           <section className="nav-link">
-            <NavLink className="nav-btn"to="/">
+            <NavLink className="nav-btn"to="/signin">
             <img className="nav-img" src={account} />
-              Account
+            Login
             </NavLink>
           </section>
           <section className="nav-link">
-            <NavLink className="nav-btn"to="/">
-              <img className="nav-img" src={Setting}/>
-              Settings</NavLink>
+            <NavLink className="nav-btn"to="/userprofile">
+              <img className="nav-img" src={account}/>
+              Account</NavLink>
           </section>
         </footer>
       </nav>
