@@ -14,7 +14,7 @@ function Category() {
       </section>
       <section className="container-items">
         {categoryList.map((category) => (
-          <Categorycard category={category}  />
+          <Categorycard key={category._id} category={category}  />
         ))}
       </section>
     </div>
