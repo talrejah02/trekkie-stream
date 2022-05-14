@@ -10,7 +10,7 @@ import account from "../../assets/svg/account.svg";
 import Setting from "../../assets/svg/Setting.svg";
 import watchlater from "../../assets/svg/watchlater.svg";
 import "./nav.css";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context";
 
 function Nav() {
   const { isLogin } = useAuth();

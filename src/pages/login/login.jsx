@@ -5,7 +5,7 @@ import axios from "axios";
 import "./login.css";
 import loginsvg from "../assets/svg/loginsvg.svg";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context";
 
 function Login() {
   const { isLogin, setLogin } = useAuth();
@@ -15,6 +15,7 @@ function Login() {
   const location = useLocation();
 
   const loginHandler = async () => {
+    
     try {
       const response = await axios.post(`/api/auth/login`, {
         email: userEmail.current.value,
@@ -60,7 +61,7 @@ function Login() {
 
         <section className="login-main">
           <section className="login-header">Login</section>
-          <form action="" className="login-form">
+          <form action="" className="login-form" >
             <section className="input-field">
               <section className="input-group">
                 <section className="input-svg">
@@ -143,9 +144,9 @@ function Login() {
               <NavLink to="">forgot your password?</NavLink>
             </section>
             <button
-              type="button"
-              onClick={loginHandler}
+              type="submit"
               className="btn-primary"
+              onClick={loginHandler}
             >
               Log in
             </button>

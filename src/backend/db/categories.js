@@ -11,20 +11,20 @@ export const categories = [
     categoryName: "Backpacking",
     description:
       "This category will teach you about how to pack a backpack and how to use gears",
-    image:"Images/backpack.webp"
+    image:"Images/categoryImages/bacpack.webp"
   },
   {
     _id: uuid(),
     categoryName: "Altitude Sickness",
     description:
       "Explore all the causes and treatments of Altitude sickness ",
-      image:"Images/altitude.webp"
+      image:"Images/categoryImages/altitude.webp"
   },
   {
     _id: uuid(),
     categoryName: "All Trekks",
     description:
       "Explore all the trekks we have done till now",
-      image:"Images/treks.webp"
+      image:"Images/categoryImages/treks.webp"
   },
 ];

@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import "./userProfile.css";
-import { useAuth } from "../../context/authContext";
+import { useAuth } from "../../context";
 
 function Userprofile() {
   const userDetail = JSON.parse(localStorage.getItem("user"));
