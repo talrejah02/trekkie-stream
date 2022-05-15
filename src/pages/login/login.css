@@ -103,3 +103,7 @@ label {
     font-size: 0.9rem;
     font-weight: 600;
 }
+.login-form{
+    display: flex;
+    flex-direction: column;
+}

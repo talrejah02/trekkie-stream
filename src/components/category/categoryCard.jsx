@@ -1,15 +1,24 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useVideoscontext } from '../../context/videosContext'
 import "./category.css"
 
-function Categorycard() {
+function Categorycard({ category }) {
+  const navigate=useNavigate()
+  const { categoryName, description, image } = category
+  const {dispatch}=useVideoscontext()
+  const categoryHandler = () => {
+    dispatch({ type: "category", payload: categoryName })
+    navigate("/explore")
+  }
   return (
-    <div className='category-card'>
-      <img className='category-card-img' src='Images/categoryImages/altitude.webp'/>
+    <div className='category-card' onClick={categoryHandler}>
+      <img className='category-card-img' src={image}/>
       <span className='category-card-title'>
-      Altitude Sickness
+      {categoryName}
       </span>
       <span className='category-card-description'>
-      Explore all the causes and treatments of Altitude sickness
+     {description}
       </span>
     </div>
   )
