@@ -1,7 +1,6 @@
 import React from "react";
 import "./singleVideopage.css";
 import ReactPlayer from "react-player";
-// import { useLikedVideos } from "../../context/likeVideoscontext";
 import {
   Like,
   Likefilled,
@@ -10,24 +9,31 @@ import {
   WatchlaterFilled,
 } from "./svg";
 import { useParams } from "react-router-dom";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
+import { useLikedVideos } from "../../context/likeVideoscontext";
 import axios from "axios";
 
 function SinglevideoPage() {
-  const [video,setVideo]=useState([])
-  const { videoId } = useParams()
-
-  useEffect(async() => {
+  const [video, setVideo] = useState({});
+  const { videoId } = useParams();
+  const { likedVideoslist } = useLikedVideos();
+  const { likeVideohandler, dislikeVideohandler } = useLikedVideos();
+  let inLikedvideo = false;
+  let inWatchlatervideo = false;
+  useEffect(async () => {
     try {
-      const response = await axios.get(`/api/video/${videoId}`)
-      setVideo(response.data.video)
-
-    } catch(error) {
-      console.log(error)
+      const response = await axios.get(`/api/video/${videoId}`);
+      setVideo(response.data.video);
+    } catch (error) {
+      console.log(error);
     }
-  }, [videoId])
-  console.log(`https://www.youtube.com/watch?v=${video._id}`)
-  // const{postLikehandler,deleteLikehandler} =useLikedVideos()
+  }, [videoId]);
+  if (likedVideoslist.length > 0) {
+    if (video) {
+      inLikedvideo = likedVideoslist.some((item) => item._id === video._id);
+    }
+  }
+
   return (
     <div className="main-container">
       <section className="player-wrapper">
@@ -50,10 +56,21 @@ function SinglevideoPage() {
             <span className="details-date">28 August 2016</span>
           </section>
           <section className="video-action">
-            <button className="action-btn" >
-              <Like />
-              {/* <Likefilled/> */}
-            </button>
+            {!inLikedvideo ? (
+              <button
+                className="action-btn"
+                onClick={() => likeVideohandler(video)}
+              >
+                <Like />
+              </button>
+            ) : (
+              <button
+                className="action-btn"
+                onClick={() => dislikeVideohandler(video)}
+              >
+                <Likefilled />
+              </button>
+            )}
             <button className="action-btn">
               <Watchlater />
               {/* <WatchlaterFilled/> */}
@@ -62,11 +79,11 @@ function SinglevideoPage() {
               <PlaylistIcon />
             </button>
           </section>
-              </section>
-              <section className="creator-details">
-                  <img src="Images/hikeslogo.webp" className="card-logo-img" />
-                  <span className="creator-title">IndiaHikes</span>
-              </section>
+        </section>
+        <section className="creator-details">
+          <img src="Images/hikeslogo.webp" className="card-logo-img" />
+          <span className="creator-title">IndiaHikes</span>
+        </section>
       </section>
     </div>
   );
