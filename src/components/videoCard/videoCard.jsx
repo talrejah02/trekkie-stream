@@ -1,12 +1,16 @@
 import React from "react";
 import "./videocard.css";
 import { Menuicon } from "../../assets/svg/menu";
-function Videocard({video}) {
- const{title,views,created,image,creatorImage}=video
-  console.log(video)
+import { useNavigate } from "react-router-dom";
+function Videocard({ video }) {
   
+  const { _id,title, views, created, image, creatorImage } = video
+  const navigate = useNavigate()
+  const videoClickhandler = () => {
+  navigate(`/video/${_id}`)
+}  
   return (
-    <div className="card-container">
+    <div className="card-container" onClick={videoClickhandler}>
       <img className="card-img" src={image} />
       <section className="card-description">
         <section className="card-description-one">

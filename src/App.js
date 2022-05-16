@@ -1,6 +1,6 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { Explore, History, Home, Likedvideo ,Login,Playlist, Signup, Userprofile, Watchlater} from "./pages";
+import { Explore, History, Home, Likedvideo ,Login,Playlist, Signup, SinglevideoPage, Userprofile, Watchlater} from "./pages";
 import { Nav } from "./components/index";
 import PrivateRoutes from "./privateRoute/PrivateRoute";
 
@@ -19,6 +19,7 @@ function App() {
         </Route>
         
         <Route path="/" element={<Home />} />
+        <Route path="/video/:videoId" element={<SinglevideoPage />} />
         <Route path="/explore" element={<Explore />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Login />} />
