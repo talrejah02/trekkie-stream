@@ -2,14 +2,39 @@ import React from "react";
 import "./videocard.css";
 import { useNavigate } from "react-router-dom";
 import { DeleteIcon } from "../../assets/svg/delete";
-import { useLikedVideos, useWatchLatervideos,useHistory } from "../../context";
+import {
+  useLikedVideos,
+  useWatchLatervideos,
+  useHistory,
+  usePlaylist,
+} from "../../context";
+import {
+  Watchlater,
+  PlaylistIcon,
+  WatchlaterFilled,
+} from "../../pages/single video page/svg";
+import { Playlistmodal } from "../playlist-modal/playlistModal";
 
-function Videocard({ video, cardType }) {
+function Videocard({ video, cardType,playlistId }) {
   const { _id, title, views, created, image, creatorImage } = video;
   const { dislikeVideohandler } = useLikedVideos();
-  const { removeFromwatchLatervideoHanlder } = useWatchLatervideos();
+  const {
+    removeFromwatchLatervideoHanlder,
+    watchlaterVideoslist,
+    addTowatchLatervideoHandler,
+  } = useWatchLatervideos();
   const { deletehistoryVideohandler } = useHistory();
   const navigate = useNavigate();
+  const { setSelectedvideo, setShowmodal,showModal,deleteVideofromPlaylist } = usePlaylist();
+  let inWatchlatervideo = false;
+
+  if (watchlaterVideoslist.length > 0) {
+    if (video) {
+      inWatchlatervideo = watchlaterVideoslist.some(
+        (item) => item._id === video._id
+      );
+    }
+  }
 
   const deleteHandler = () => {
     if (cardType == "like") {
@@ -17,7 +42,9 @@ function Videocard({ video, cardType }) {
     } else if (cardType == "watchlater") {
       removeFromwatchLatervideoHanlder(video);
     } else if (cardType == "history") {
-      deletehistoryVideohandler(video)
+      deletehistoryVideohandler(video);
+    } else if (cardType == "playlist") {
+      deleteVideofromPlaylist(playlistId,_id)
     }
   };
 
@@ -40,6 +67,34 @@ function Videocard({ video, cardType }) {
         <section className="card-description-two">
           <span className="description-views">{views} views</span>
           <span className="description-date">{created}</span>
+          {cardType == "explore" &&
+            (!inWatchlatervideo ? (
+              <button
+                className="action-btn"
+                onClick={() => addTowatchLatervideoHandler(video)}
+              >
+                <Watchlater />
+              </button>
+            ) : (
+              <button
+                className="action-btn"
+                onClick={() => removeFromwatchLatervideoHanlder(video)}
+              >
+                <WatchlaterFilled />
+              </button>
+            ))}
+          {cardType == "explore" && (
+            <button
+              className="action-btn"
+              onClick={() => {
+                setSelectedvideo(video);
+                setShowmodal(true);
+              }}
+            >
+              <PlaylistIcon />
+            </button>
+          )}
+          {showModal && <Playlistmodal />}
           {cardType !== "explore" && (
             <span className="card-svg" onClick={deleteHandler}>
               <DeleteIcon />

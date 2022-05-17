@@ -1,10 +1,11 @@
 import React from 'react'
 import { Playlisticon } from '../assets/svg/playlistIcon'
 import { Playlistmodal } from '../../components/playlist-modal/playlistModal'
-import { useState } from 'react'
+import { Playlistcontainer } from '../../components'
+import { usePlaylist } from '../../context'
 
 function Playlist() {
-  const [isModal,setIsmodal]=useState(false)
+  const {showModal, setShowmodal,playlists} =usePlaylist()
   return (
     <div className='main-container'>
     <section  className='container-header'>
@@ -14,14 +15,14 @@ function Playlist() {
        </span>
        <span className='header-text'>Playlist</span>
        </section>
-   </section>
-   <section className='listing-status'>
+      </section>
+      {playlists.length>0?( <Playlistcontainer/>):( <section className='listing-status'>
      <span className='status-description'>
          You currently do not have any playlist.
      </span>
-     <button className='btn-primary' onClick={()=>setIsmodal(!isModal)}>New Playlist</button>
-   </section>
-   {isModal?<Playlistmodal modalStatus={setIsmodal}/>:""
+     <button className='btn-primary' onClick={()=>setShowmodal(true)}>New Playlist</button>
+      </section>)}
+   {showModal?<Playlistmodal/>:""
    }
 </div>
   )

@@ -1,0 +1,36 @@
+.card-horizontal{
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    background-color: var(--background-secondary);
+    border-radius: 0.8rem;
+    min-width: 22rem;
+    color: var(--font-primary);
+}
+.horizontal-card-img{
+    width: 10rem;
+}
+.horizontal-card-img img{
+    border-radius: 0.8rem;
+ width: 100%;
+}
+.horizontal-card-title{
+    font-size: 1.2rem;
+    color: inherit;
+
+}
+.horizontal-card-description{
+    width: 60%;
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+
+}
+.card-horizontal:hover{
+    cursor: pointer;
+    transform: scale(1.01);
+    transition: 0.4s;
+    color: var(--primary);
+
+
+}

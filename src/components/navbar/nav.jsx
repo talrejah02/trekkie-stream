@@ -7,7 +7,6 @@ import history from "../../assets/svg/History.svg";
 import playlist from "../../assets/svg/playlist.svg";
 import Logo from "../../assets/svg/Logo.svg";
 import account from "../../assets/svg/account.svg";
-import Setting from "../../assets/svg/Setting.svg";
 import watchlater from "../../assets/svg/watchlater.svg";
 import "./nav.css";
 import { useAuth } from "../../context";

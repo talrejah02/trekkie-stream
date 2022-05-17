@@ -29,6 +29,7 @@
     width: 2rem;
     height: 100%;
     padding-top: 0.5rem;
+    fill: var(--primary);
 }
 .btn-link-primary{
     text-decoration: none;
