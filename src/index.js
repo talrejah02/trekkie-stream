@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { AuthProvider } from "./context/authContext";
 import { CategoryProvider } from "./context/categoryContext";
 import { VideosProvider } from "./context";
+import { LikedVideosProvider } from "./context/likeVideoscontext";
 
 // Call make Server
 makeServer();
@@ -14,13 +15,15 @@ makeServer();
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <VideosProvider>
-        <CategoryProvider>
           <AuthProvider>
+        <VideosProvider>
+          <LikedVideosProvider>
+        <CategoryProvider>
             <App />
-          </AuthProvider>
         </CategoryProvider>
+          </LikedVideosProvider>
       </VideosProvider>
+          </AuthProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

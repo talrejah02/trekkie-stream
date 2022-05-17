@@ -1,4 +1,5 @@
 .card-container {
+    position: relative;
     margin: 1rem;
     display: flex;
     flex-direction: column;
@@ -45,4 +46,13 @@
     cursor: pointer;
     transform: scale(1.03);
     transition: 0.4s ease;
+}
+.card-svg{
+    width: 1.5rem;
+    height: 100%;
+   fill: var(--primary);
+}
+.card-svg:hover{
+    cursor: pointer;
+    fill: rgb(248, 23, 23);
 }
