@@ -4,7 +4,7 @@ import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import axios from "axios";
 import "./login.css";
 import loginsvg from "../assets/svg/loginsvg.svg";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useAuth } from "../../context";
 
 function Login() {
@@ -15,7 +15,6 @@ function Login() {
   const location = useLocation();
 
   const loginHandler = async () => {
-    
     try {
       const response = await axios.post(`/api/auth/login`, {
         email: userEmail.current.value,
@@ -31,7 +30,7 @@ function Login() {
       };
       localStorage.setItem("token", response.data.encodedToken);
       localStorage.setItem("user", JSON.stringify(userDetail));
-      console.log(response);
+     
     } catch (error) {
       console.log(error);
     }
@@ -61,7 +60,7 @@ function Login() {
 
         <section className="login-main">
           <section className="login-header">Login</section>
-          <form action="" className="login-form" >
+          <form action="" className="login-form">
             <section className="input-field">
               <section className="input-group">
                 <section className="input-svg">

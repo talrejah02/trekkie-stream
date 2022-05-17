@@ -10,16 +10,24 @@ import {
 } from "./svg";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useLikedVideos } from "../../context/likeVideoscontext";
 import axios from "axios";
+import { useWatchLatervideos, useLikedVideos, useHistory } from "../../context";
+
 
 function SinglevideoPage() {
   const [video, setVideo] = useState({});
   const { videoId } = useParams();
-  const { likedVideoslist } = useLikedVideos();
-  const { likeVideohandler, dislikeVideohandler } = useLikedVideos();
+  const { likeVideohandler, dislikeVideohandler, likedVideoslist } =
+    useLikedVideos();
+  const {
+    addTowatchLatervideoHandler,
+    removeFromwatchLatervideoHanlder,
+    watchlaterVideoslist,
+  } = useWatchLatervideos();
+  const{historyVideohandler}=useHistory()
   let inLikedvideo = false;
   let inWatchlatervideo = false;
+
   useEffect(async () => {
     try {
       const response = await axios.get(`/api/video/${videoId}`);
@@ -28,9 +36,17 @@ function SinglevideoPage() {
       console.log(error);
     }
   }, [videoId]);
+
   if (likedVideoslist.length > 0) {
     if (video) {
       inLikedvideo = likedVideoslist.some((item) => item._id === video._id);
+    }
+  }
+  if (watchlaterVideoslist.length > 0) {
+    if (video) {
+      inWatchlatervideo = watchlaterVideoslist.some(
+        (item) => item._id === video._id
+      );
     }
   }
 
@@ -43,6 +59,7 @@ function SinglevideoPage() {
           className="react-player"
           width="100%"
           height="100%"
+          onPlay={()=>historyVideohandler(video)}
         />
       </section>
       <section className="video-content">
@@ -71,17 +88,28 @@ function SinglevideoPage() {
                 <Likefilled />
               </button>
             )}
-            <button className="action-btn">
-              <Watchlater />
-              {/* <WatchlaterFilled/> */}
-            </button>
+            {!inWatchlatervideo ? (
+              <button
+                className="action-btn"
+                onClick={() => addTowatchLatervideoHandler(video)}
+              >
+                <Watchlater />
+              </button>
+            ) : (
+              <button
+                className="action-btn"
+                onClick={() => removeFromwatchLatervideoHanlder(video)}
+              >
+                <WatchlaterFilled />
+              </button>
+            )}
             <button className="action-btn">
               <PlaylistIcon />
             </button>
           </section>
         </section>
         <section className="creator-details">
-          <img src="Images/hikeslogo.webp" className="card-logo-img" />
+          <img src="../svg/hikeslogo.webp" className="card-logo-img" />
           <span className="creator-title">IndiaHikes</span>
         </section>
       </section>

@@ -23,7 +23,6 @@ function Explore() {
     })();
   }, [])
   const filteredVideolist = getFilteredvideos(state, videoList)
-  console.log(filteredVideolist)
   
   return (
     <div className='main-container'>
@@ -41,7 +40,7 @@ function Explore() {
             <input className='header-search-input' type="text" placeholder='search' />
             </section>
         </section>
-      <Videolisting videos={filteredVideolist}/>
+      <Videolisting videos={filteredVideolist} type={"explore"}/>
     </div>
   )
 }
