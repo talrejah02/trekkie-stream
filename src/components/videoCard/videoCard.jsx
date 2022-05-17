@@ -13,7 +13,7 @@ import {
   PlaylistIcon,
   WatchlaterFilled,
 } from "../../pages/single video page/svg";
-import { Playlistmodal } from "../playlist-modal/playlistModal";
+
 
 function Videocard({ video, cardType,playlistId }) {
   const { _id, title, views, created, image, creatorImage } = video;
@@ -94,7 +94,7 @@ function Videocard({ video, cardType,playlistId }) {
               <PlaylistIcon />
             </button>
           )}
-          {showModal && <Playlistmodal />}
+         
           {cardType !== "explore" && (
             <span className="card-svg" onClick={deleteHandler}>
               <DeleteIcon />
