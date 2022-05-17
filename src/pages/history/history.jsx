@@ -6,7 +6,7 @@ import {Videolisting } from "../../components";
 
 
 function History() {
-  const { historyVideoslist } = useHistory();
+  const { historyVideoslist, deleteAllhistoryVideohandler } = useHistory();
   
   return (
     <div className="main-container">
@@ -18,7 +18,7 @@ function History() {
           <span className="header-text">History</span>
         </section>
         {historyVideoslist.length > 0 && (
-          <button className="btn-primary">Clear History</button>
+          <button className="btn-primary" onClick={deleteAllhistoryVideohandler}>Clear History</button>
         )}
       </section>
       
