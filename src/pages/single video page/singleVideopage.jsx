@@ -11,7 +11,8 @@ import {
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { useWatchLatervideos, useLikedVideos, useHistory } from "../../context";
+import { useWatchLatervideos, useLikedVideos, useHistory, usePlaylist } from "../../context";
+import { Playlistmodal } from "../../components";
 
 
 function SinglevideoPage() {
@@ -24,7 +25,8 @@ function SinglevideoPage() {
     removeFromwatchLatervideoHanlder,
     watchlaterVideoslist,
   } = useWatchLatervideos();
-  const{historyVideohandler}=useHistory()
+  const { historyVideohandler } = useHistory()
+  const {showModal,setShowmodal,setSelectedvideo}=usePlaylist()
   let inLikedvideo = false;
   let inWatchlatervideo = false;
 
@@ -103,7 +105,10 @@ function SinglevideoPage() {
                 <WatchlaterFilled />
               </button>
             )}
-            <button className="action-btn">
+            <button className="action-btn" onClick={() => {
+              setSelectedvideo(video)
+              setShowmodal(true)
+            }}>
               <PlaylistIcon />
             </button>
           </section>
@@ -113,6 +118,9 @@ function SinglevideoPage() {
           <span className="creator-title">IndiaHikes</span>
         </section>
       </section>
+      {showModal&&
+        <Playlistmodal/>
+      }
     </div>
   );
 }

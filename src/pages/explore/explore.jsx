@@ -3,14 +3,17 @@ import React from 'react'
 import { useState } from "react"
 import { useEffect } from 'react'
 import { Videolisting } from '../../components'
-import { useVideoscontext } from '../../context'
+import { usePlaylist, useVideoscontext } from '../../context'
 import { getFilteredvideos } from '../../utils/getFilteredvideos'
 import { Exploreicon } from '../assets/svg/exploreIcon'
+import { Playlistmodal } from "../../components";
+
 import "./explore.css"
 
 function Explore() {
   const [videoList, setVideolist] = useState([]);
   const { state } = useVideoscontext();
+  const {showModal}=usePlaylist()
   
   useEffect(() => {
     (async () => {
@@ -40,7 +43,8 @@ function Explore() {
             <input className='header-search-input' type="text" placeholder='search' />
             </section>
         </section>
-      <Videolisting videos={filteredVideolist} type={"explore"}/>
+      <Videolisting videos={filteredVideolist} type={"explore"} />
+      {showModal && <Playlistmodal />}
     </div>
   )
 }
