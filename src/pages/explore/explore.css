@@ -24,3 +24,24 @@
 .header-search:focus-within{
     background-color: var(--font-primary);
 }
+.chips-container{
+    display: flex;
+    column-gap: 1rem;
+    align-items: center;
+    color: var(--font-primary);
+}
+.category-chip{
+    padding: 0.3rem;
+    border-radius: 20px;
+    background-color: var(--background-secondary);
+    color: var(--primary);
+}
+.category-chip:hover{
+    cursor: pointer;
+    background-color: var(--primary);
+    color: var(--font-primary);
+}
+.active-btn{
+    background-color: var(--primary);
+    color: var(--font-primary);
+}
