@@ -11,13 +11,16 @@ const PlaylistProvider = ({ children }) => {
   const [singlePlaylist, setSingleplaylist] = useState([]);
 
   useEffect(async () => {
-    try {
-      const response = await axios.get(`/api/user/playlists`, {
-        headers: { authorization: localStorage.getItem("token") },
-      });
-      setPlaylists(response);
-    } catch (error) {
-      console.log(error);
+    if (localStorage.getItem("token")) {
+      
+      try {
+        const response = await axios.get(`/api/user/playlists`, {
+          headers: { authorization: localStorage.getItem("token") },
+        });
+        setPlaylists(response);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }, []);
 

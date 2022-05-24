@@ -8,13 +8,16 @@ const HistoryVideosProvider = ({ children }) => {
   const [historyVideoslist, setHistoryvideosList] = useState([]);
 
   useEffect(async () => {
-    try {
-      const response = await axios.get(`/api/user/history`, {
-        headers: { authorization: localStorage.getItem("token") },
-      });
-      setHistoryvideosList(response.data.history);
-    } catch (error) {
-      console.log(error);
+    if (localStorage.getItem("token")) {
+      
+      try {
+        const response = await axios.get(`/api/user/history`, {
+          headers: { authorization: localStorage.getItem("token") },
+        });
+        setHistoryvideosList(response.data.history);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }, []);
 

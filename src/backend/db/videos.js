@@ -12,7 +12,7 @@
     creator: "Indiahikes",
     categoryName:"Altitude Sickness",
     tags:["trending"],
-    created:"August 17 2016",
+    created:"August 19, 2016",
     views:187568,
     image:"Images/videoImages/sickness.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -26,7 +26,7 @@
     creator: "Indiahikes",
     categoryName:"Altitude Sickness",
     tags:[""],
-    created:"August 17 2016",
+    created:"August 17, 2014",
     views:187568,
     image:"Images/videoImages/sickness1.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -39,7 +39,7 @@
     creator: "Indiahikes",
     categoryName:"Altitude Sickness",
     tags:[""],
-    created:"August 17 2016",
+    created:"June 17, 2011",
     views:187568,
     image:"Images/videoImages/sickness2.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -54,7 +54,7 @@
     creator: "Indiahikes",
     categoryName:"Backpacking",
     tags:["trending"],
-    created:"August 17 2016",
+    created:"May 30, 2016",
     views:187568,
     image:"Images/videoImages/backpack.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -66,7 +66,7 @@
     creator: "Indiahikes",
     categoryName:"Backpacking",
     tags:[""],
-    created:"August 17 2016",
+    created:"May 17, 2021",
     views:187568,
     image:"Images/videoImages/backpack1.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -80,7 +80,7 @@
     creator: "Indiahikes",
     categoryName:"All Trekks",
     tags:["trending"],
-    created:"August 17 2016",
+    created:"Jully 17, 2016",
     views:187568,
     image:"Images/videoImages/trekk.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -92,7 +92,7 @@
     creator: "Indiahikes",
     categoryName:"All Trekks",
     tags:["trending"],
-    created:"August 17 2016",
+    created:"August 17, 2016",
     views:187568,
     image:"Images/videoImages/trekk1.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -104,7 +104,7 @@
     creator: "Indiahikes",
     categoryName:"All Trekks",
     tags:["trending"],
-    created:"August 17 2016",
+    created:"October 17, 2016",
     views:187568,
     image:"Images/videoImages/trekk2.webp",
     creatorImage:"Images/videoImages/creator.webp",
@@ -113,6 +113,3 @@
 
 
 ]
-
-// https://www.googleapis.com/youtube/v3/videos?id=_vBrqzYNbew&key=AIzaSyAjHCrrassg6_9f0-GpCqaVMhUywcvFMWk
-//      &part=snippet,contentDetails,statistics,status
