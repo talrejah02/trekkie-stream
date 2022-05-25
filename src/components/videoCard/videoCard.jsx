@@ -17,6 +17,7 @@ import {
 
 function Videocard({ video, cardType,playlistId }) {
   const { _id, title, views, created, image, creatorImage } = video;
+  console.log(image)
   const { dislikeVideohandler } = useLikedVideos();
   const {
     removeFromwatchLatervideoHanlder,

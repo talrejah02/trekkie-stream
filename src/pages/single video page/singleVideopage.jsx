@@ -30,13 +30,15 @@ function SinglevideoPage() {
   let inLikedvideo = false;
   let inWatchlatervideo = false;
 
-  useEffect(async () => {
-    try {
-      const response = await axios.get(`/api/video/${videoId}`);
-      setVideo(response.data.video);
-    } catch (error) {
-      console.log(error);
-    }
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await axios.get(`/api/video/${videoId}`);
+        setVideo(response.data.video);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
   }, [videoId]);
 
   if (likedVideoslist.length > 0) {

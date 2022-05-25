@@ -10,18 +10,19 @@ const PlaylistProvider = ({ children }) => {
   const [selectedVideo, setSelectedvideo] = useState();
   const [singlePlaylist, setSingleplaylist] = useState([]);
 
-  useEffect(async () => {
-    if (localStorage.getItem("token")) {
-      
-      try {
-        const response = await axios.get(`/api/user/playlists`, {
-          headers: { authorization: localStorage.getItem("token") },
-        });
-        setPlaylists(response);
-      } catch (error) {
-        console.log(error);
+  useEffect(() => {
+    (async () => {
+      if (localStorage.getItem("token")) {
+        try {
+          const response = await axios.get(`/api/user/playlists`, {
+            headers: { authorization: localStorage.getItem("token") },
+          });
+          setPlaylists(response);
+        } catch (error) {
+          console.log(error);
+        }
       }
-    }
+    })();
   }, []);
 
   const newPlaylisthandler = (playlist) => {

@@ -8,9 +8,11 @@ const CategoryProvider=({children})=>{
     const [selectedCategory,setSelectedcategory]=useState(null)
     const [categoryList,setCategorylist]=useState([])
 
-    useEffect(async()=>{
-    const response= await axios.get('/api/categories')
-     setCategorylist(response.data.categories)
+    useEffect(() => {
+        (async () => {
+            const response = await axios.get('/api/categories')
+            setCategorylist(response.data.categories)
+        })();
     },[])
     return(<Categorycontext.Provider value={{selectedCategory,setSelectedcategory,categoryList}}>{children}</Categorycontext.Provider>)
 

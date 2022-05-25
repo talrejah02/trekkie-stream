@@ -7,19 +7,21 @@ const useWatchLatervideos = () => useContext(WatchlaterVideosContext);
 const WatchLaterVideosProvider = ({ children }) => {
   const [watchlaterVideoslist, setWatchlaterVideoslist] = useState([]);
 
-  useEffect(async () => {
-    if (localStorage.getItem("token")) {
+  useEffect(() => {
+    (async () => {
+      if (localStorage.getItem("token")) {
       
-      try {
-        const response = await axios.get(`/api/user/watchlater`, {
-          headers: { authorization: localStorage.getItem("token") },
-        });
-        setWatchlaterVideoslist(response.data.watchlater);
-      } catch (error) {
-        console.log(error);
+        try {
+          const response = await axios.get(`/api/user/watchlater`, {
+            headers: { authorization: localStorage.getItem("token") },
+          });
+          setWatchlaterVideoslist(response.data.watchlater);
+        } catch (error) {
+          console.log(error);
+        }
       }
-    }
-    }, []);
+    })();
+  }, []);
 
   const addTowatchLatervideoHandler= (video) => {
     if (localStorage.getItem("token")) {

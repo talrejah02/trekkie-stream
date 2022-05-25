@@ -7,18 +7,19 @@ const useLikedVideos = () => useContext(LikedVideosContext);
 const LikedVideosProvider = ({ children }) => {
   const [likedVideoslist, setLikedvideosList] = useState([]);
 
-  useEffect(async () => {
-    if (localStorage.getItem("token")) {
-      
-      try {
-        const response = await axios.get(`/api/user/likes`, {
-          headers: { authorization: localStorage.getItem("token") },
-        });
-        setLikedvideosList(response.data.likes);
-      } catch (error) {
-        console.log(error);
+  useEffect(() => {
+    (async () => {
+      if (localStorage.getItem("token")) {
+        try {
+          const response = await axios.get(`/api/user/likes`, {
+            headers: { authorization: localStorage.getItem("token") },
+          });
+          setLikedvideosList(response.data.likes);
+        } catch (error) {
+          console.log(error);
+        }
       }
-    }
+    })();
   }, []);
 
   const likeVideohandler = (video) => {
